@@ -3,12 +3,11 @@ import streamlit as st
 import numpy as np
 
 # load model
-with open("kmeans_model.pkl", "rb") as f:
-    kmeans = pickle.load(f)
+import joblib
 
-# load scaler
-with open("scaler.pkl", "rb") as f:
-    scaler = pickle.load(f)
+kmeans = joblib.load("kmeans_model.joblib")
+scaler = joblib.load("scaler.joblib")
+
 
 st.title("🌍 Country Development Clustering App")
 
